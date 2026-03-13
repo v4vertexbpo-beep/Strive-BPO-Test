@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strive BPO LLP – Redefining Outsourcing Excellence</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --navy: #1a1f6e;
+    --navy-dark: #12165a;
+    --sky: #29a8e0;
+    --sky-light: #4fc3f7;
+    --white: #ffffff;
+    --gray-light: #f5f7fa;
+    --gray-mid: #e8ecf0;
+    --gray-text: #6b7280;
+    --dark-text: #1e2432;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Open Sans', sans-serif; color: var(--dark-text); overflow-x: hidden; }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    background: var(--navy-dark);
+    color: #c5cbe8;
+    font-size: 13px;
+    padding: 8px 0;
+  }
+  .topbar .inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 20px;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+  }
+  .topbar a { color: #c5cbe8; text-decoration: none; margin-left: 20px; }
+  .topbar a:hover { color: var(--sky-light); }
+  .topbar i { margin-right: 5px; color: var(--sky); }
+
+  /* ── NAVBAR ── */
+  header {
+    background: var(--white);
+    box-shadow: 0 2px 18px rgba(26,31,110,0.10);
+    position: sticky; top: 0; z-index: 1000;
+  }
+  .navbar {
+    max-width: 1200px; margin: 0 auto; padding: 0 20px;
+    display: flex; align-items: center; justify-content: space-between; height: 72px;
+  }
+  .logo svg { height: 56px; width: auto; }
+  .logo-text { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; }
+  .logo-text span.dark { color: var(--navy); }
+  .logo-text span.light { color: var(--sky); }
+  nav ul { list-style: none; display: flex; gap: 4px; }
+  nav ul li a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600; font-size: 14px;
+    color: var(--dark-text); text-decoration: none;
+    padding: 8px 14px; border-radius: 4px;
+    transition: color .2s, background .2s;
+  }
+  nav ul li a:hover { color: var(--sky); background: #eef7fd; }
+  .btn-apply {
+    background: var(--sky); color: var(--white);
+    font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14px;
+    padding: 10px 24px; border-radius: 30px; border: none; cursor: pointer;
+    text-decoration: none; transition: background .2s, transform .15s;
+    display: inline-block;
+  }
+  .btn-apply:hover { background: var(--navy); transform: translateY(-1px); }
+  .hamburger { display: none; background: none; border: none; cursor: pointer; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); margin: 5px 0; transition: .3s; }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 45%, #1a3a8f 100%);
+    min-height: 92vh; display: flex; align-items: center; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 70% 50%, rgba(41,168,224,0.18) 0%, transparent 65%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; opacity: .06;
+    background-image: linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-inner {
+    max-width: 1200px; margin: 0 auto; padding: 80px 20px 60px;
+    display: flex; flex-direction: column; gap: 28px;
+    position: relative; z-index: 2;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(41,168,224,0.18);
+    border: 1px solid rgba(41,168,224,0.5);
+    color: var(--sky-light); font-family: 'Montserrat', sans-serif;
+    font-weight: 600; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 18px; border-radius: 30px; width: fit-content;
+  }
+  .hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 900; color: var(--white); line-height: 1.15;
+    max-width: 700px;
+  }
+  .hero h1 span { color: var(--sky-light); }
+  .hero p {
+    color: rgba(255,255,255,.78); font-size: 1.08rem; line-height: 1.8; max-width: 580px;
+  }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--sky); color: #fff;
+    font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 15px;
+    padding: 14px 36px; border-radius: 30px; border: none; cursor: pointer;
+    text-decoration: none; display: inline-block;
+    box-shadow: 0 8px 30px rgba(41,168,224,0.4);
+    transition: background .2s, transform .15s, box-shadow .2s;
+  }
+  .btn-primary:hover { background: #1e9bd0; transform: translateY(-2px); box-shadow: 0 12px 40px rgba(41,168,224,0.5); }
+  .btn-outline {
+    background: transparent; color: #fff;
+    font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 15px;
+    padding: 13px 36px; border-radius: 30px; border: 2px solid rgba(255,255,255,.5);
+    text-decoration: none; display: inline-block;
+    transition: border-color .2s, background .2s;
+  }
+  .btn-outline:hover { border-color: var(--sky-light); background: rgba(41,168,224,0.15); }
+  .hero-stats {
+    display: flex; gap: 40px; flex-wrap: wrap; margin-top: 16px;
+  }
+  .stat { text-align: left; }
+  .stat-number {
+    font-family: 'Montserrat', sans-serif; font-weight: 900;
+    font-size: 2rem; color: var(--sky-light);
+  }
+  .stat-label { color: rgba(255,255,255,.65); font-size: 13px; margin-top: 2px; }
+
+  /* ── SECTION COMMON ── */
+  section { padding: 90px 20px; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 12px;
+    letter-spacing: 3px; text-transform: uppercase; color: var(--sky);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Montserrat', sans-serif; font-weight: 800;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem); color: var(--navy); line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .section-title span { color: var(--sky); }
+  .section-desc { color: var(--gray-text); font-size: 1rem; line-height: 1.75; max-width: 620px; }
+
+  /* ── CEO MESSAGE ── */
+  .ceo-section { background: var(--gray-light); }
+  .ceo-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 420px; gap: 70px; align-items: center;
+  }
+  .ceo-content .section-title { margin-bottom: 22px; }
+  .ceo-content p { color: var(--gray-text); line-height: 1.85; margin-bottom: 16px; }
+  .ceo-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 44px 36px;
+    box-shadow: 0 20px 60px rgba(26,31,110,0.10);
+    border-top: 5px solid var(--sky);
+    text-align: center;
+  }
+  .ceo-avatar {
+    width: 90px; height: 90px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy), var(--sky));
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 2.5rem; color: white;
+  }
+  .ceo-name { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--navy); }
+  .ceo-title { color: var(--sky); font-size: 13px; font-weight: 600; margin-top: 4px; }
+  .ceo-quote {
+    margin-top: 22px; font-style: italic;
+    color: var(--gray-text); font-size: .95rem; line-height: 1.7;
+    border-left: 3px solid var(--sky); padding-left: 16px; text-align: left;
+  }
+
+  /* ── ABOUT ── */
+  .about-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center;
+  }
+  .about-img-box {
+    position: relative; border-radius: 20px; overflow: hidden;
+    background: linear-gradient(135deg, var(--navy), var(--sky));
+    min-height: 380px; display: flex; align-items: center; justify-content: center;
+  }
+  .about-img-box .pattern {
+    position: absolute; inset: 0; opacity: .08;
+    background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+  .about-img-number {
+    font-family: 'Montserrat', sans-serif; font-weight: 900;
+    font-size: 5rem; color: rgba(255,255,255,.2); line-height: 1;
+    position: absolute; top: 20px; right: 20px;
+  }
+  .about-center-text {
+    position: relative; z-index: 2; text-align: center; padding: 30px;
+  }
+  .about-center-text .big { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 3rem; color: #fff; }
+  .about-center-text .sub { color: rgba(255,255,255,.8); font-size: 1rem; margin-top: 8px; }
+  .about-badges { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .about-badge {
+    background: var(--sky); color: #fff;
+    font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 13px;
+    padding: 8px 18px; border-radius: 20px;
+  }
+  .about-text h3 {
+    font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--navy);
+    margin: 22px 0 8px;
+  }
+  .about-text p { color: var(--gray-text); line-height: 1.8; }
+
+  /* ── HOW IT WORKS ── */
+  .how-section { background: var(--navy); }
+  .how-section .section-title { color: var(--white); }
+  .how-section .section-label { color: var(--sky-light); }
+  .how-section .section-desc { color: rgba(255,255,255,.7); }
+  .how-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px;
+    margin-top: 48px;
+  }
+  .how-card {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 16px; padding: 36px 24px;
+    text-align: center;
+    transition: background .25s, transform .25s;
+  }
+  .how-card:hover { background: rgba(41,168,224,0.18); transform: translateY(-6px); }
+  .how-icon {
+    width: 60px; height: 60px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--sky), #1a6fa8);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px; font-size: 1.5rem; color: #fff;
+  }
+  .how-card h4 {
+    font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1rem; color: #fff;
+    margin-bottom: 10px;
+  }
+  .how-card p { color: rgba(255,255,255,.65); font-size: .9rem; line-height: 1.7; }
+
+  /* ── SERVICES ── */
+  .services-section { background: var(--gray-light); }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px;
+    margin-top: 48px;
+  }
+  .service-card {
+    background: var(--white); border-radius: 16px;
+    padding: 36px 28px;
+    box-shadow: 0 4px 20px rgba(26,31,110,0.06);
+    border-bottom: 4px solid transparent;
+    transition: border-color .25s, transform .25s, box-shadow .25s;
+  }
+  .service-card:hover { border-color: var(--sky); transform: translateY(-6px); box-shadow: 0 16px 40px rgba(26,31,110,0.12); }
+  .service-icon {
+    width: 54px; height: 54px; border-radius: 14px;
+    background: linear-gradient(135deg, #eef7fd, #d0ecfa);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; color: var(--sky); margin-bottom: 20px;
+  }
+  .service-card h4 {
+    font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--navy);
+    margin-bottom: 10px;
+  }
+  .service-card p { color: var(--gray-text); font-size: .9rem; line-height: 1.7; }
+
+  /* ── INDUSTRIES ── */
+  .industries-section { background: var(--white); }
+  .industry-tabs { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+  .industry-tab {
+    font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 13px;
+    padding: 10px 22px; border-radius: 30px;
+    border: 2px solid var(--navy); color: var(--navy);
+    cursor: pointer; transition: all .2s;
+    background: transparent;
+  }
+  .industry-tab:hover, .industry-tab.active {
+    background: var(--navy); color: #fff;
+  }
+
+  /* ── WHY US ── */
+  .why-section {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+  }
+  .why-section .section-title { color: #fff; }
+  .why-section .section-label { color: var(--sky-light); }
+  .why-section .section-desc { color: rgba(255,255,255,.7); }
+  .why-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px;
+    margin-top: 50px;
+  }
+  .why-card {
+    background: rgba(255,255,255,.07);
+    border-radius: 16px; padding: 32px 24px;
+    border: 1px solid rgba(255,255,255,.10);
+    transition: background .25s, transform .2s;
+  }
+  .why-card:hover { background: rgba(41,168,224,0.2); transform: translateY(-4px); }
+  .why-num {
+    font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 2.5rem;
+    color: rgba(41,168,224,0.4); margin-bottom: 12px;
+  }
+  .why-card h4 {
+    font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1rem; color: #fff;
+    margin-bottom: 8px;
+  }
+  .why-card p { color: rgba(255,255,255,.65); font-size: .9rem; line-height: 1.7; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-section { background: var(--gray-light); }
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;
+    margin-top: 48px;
+  }
+  .testimonial-card {
+    background: var(--white); border-radius: 16px; padding: 32px 26px;
+    box-shadow: 0 4px 20px rgba(26,31,110,0.06);
+  }
+  .stars { color: #f59e0b; font-size: 1rem; margin-bottom: 16px; }
+  .testimonial-card blockquote { font-style: italic; color: var(--gray-text); line-height: 1.7; margin-bottom: 20px; }
+  .testimonial-author { display: flex; align-items: center; gap: 12px; }
+  .t-avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy), var(--sky));
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 700; font-size: .9rem;
+  }
+  .t-name { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: .9rem; color: var(--navy); }
+  .t-role { font-size: .8rem; color: var(--gray-text); }
+
+  /* ── FAQ ── */
+  .faq-section { background: var(--white); }
+  .faq-list { max-width: 760px; margin: 48px auto 0; }
+  .faq-item { border-bottom: 1px solid var(--gray-mid); }
+  .faq-question {
+    width: 100%; background: none; border: none; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 22px 0; text-align: left;
+    font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1rem; color: var(--navy);
+  }
+  .faq-question i { color: var(--sky); transition: transform .3s; }
+  .faq-question.open i { transform: rotate(45deg); }
+  .faq-answer { display: none; padding: 0 0 20px; color: var(--gray-text); line-height: 1.8; font-size: .95rem; }
+  .faq-answer.open { display: block; }
+
+  /* ── CTA STRIP ── */
+  .cta-strip {
+    background: linear-gradient(135deg, var(--sky), #1a6fa8);
+    padding: 70px 20px; text-align: center;
+  }
+  .cta-strip h2 {
+    font-family: 'Montserrat', sans-serif; font-weight: 900;
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem); color: #fff; margin-bottom: 14px;
+  }
+  .cta-strip p { color: rgba(255,255,255,.85); margin-bottom: 30px; font-size: 1.05rem; }
+  .btn-white {
+    background: #fff; color: var(--navy);
+    font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 15px;
+    padding: 14px 40px; border-radius: 30px; border: none; cursor: pointer;
+    text-decoration: none; display: inline-block;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    transition: transform .15s, box-shadow .2s;
+  }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(0,0,0,0.2); }
+
+  /* ── BLOG ── */
+  .blog-section { background: var(--gray-light); }
+  .blog-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 26px;
+    margin-top: 48px;
+  }
+  .blog-card {
+    background: var(--white); border-radius: 16px; overflow: hidden;
+    box-shadow: 0 4px 18px rgba(26,31,110,0.07);
+    transition: transform .25s, box-shadow .25s;
+  }
+  .blog-card:hover { transform: translateY(-6px); box-shadow: 0 14px 40px rgba(26,31,110,0.12); }
+  .blog-img {
+    height: 190px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.5rem;
+  }
+  .blog-img.a { background: linear-gradient(135deg, #e8f4fd, #c8e8f9); }
+  .blog-img.b { background: linear-gradient(135deg, #eaf1fe, #c2d6fb); }
+  .blog-img.c { background: linear-gradient(135deg, #e8f6ff, #bfe0f8); }
+  .blog-body { padding: 24px; }
+  .blog-cat {
+    font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 11px;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--sky); margin-bottom: 8px;
+  }
+  .blog-body h4 {
+    font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1rem; color: var(--navy);
+    margin-bottom: 10px; line-height: 1.4;
+  }
+  .blog-body p { color: var(--gray-text); font-size: .88rem; line-height: 1.7; margin-bottom: 16px; }
+  .blog-link {
+    font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 13px;
+    color: var(--sky); text-decoration: none;
+  }
+  .blog-link:hover { color: var(--navy); }
+
+  /* ── FOOTER ── */
+  footer { background: var(--navy-dark); padding: 70px 20px 0; }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 50px;
+  }
+  .footer-logo-text { font-family: 'Montserrat', sans-serif; font-size: 1.3rem; font-weight: 800; }
+  .footer-logo-text span.d { color: #fff; }
+  .footer-logo-text span.l { color: var(--sky); }
+  .footer-about { color: rgba(255,255,255,.6); font-size: .9rem; line-height: 1.7; margin: 16px 0 22px; }
+  .social-links { display: flex; gap: 12px; }
+  .social-link {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: rgba(255,255,255,.1);
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,.7); text-decoration: none; font-size: .9rem;
+    transition: background .2s, color .2s;
+  }
+  .social-link:hover { background: var(--sky); color: #fff; }
+  .footer-col h5 {
+    font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: .9rem;
+    color: #fff; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a { color: rgba(255,255,255,.6); text-decoration: none; font-size: .9rem; transition: color .2s; }
+  .footer-col ul li a:hover { color: var(--sky-light); }
+  .footer-contact-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; }
+  .footer-contact-item i { color: var(--sky); font-size: .95rem; margin-top: 2px; flex-shrink: 0; }
+  .footer-contact-item span { color: rgba(255,255,255,.6); font-size: .9rem; line-height: 1.6; }
+  .footer-bottom {
+    max-width: 1200px; margin: 50px auto 0; padding: 20px 0;
+    border-top: 1px solid rgba(255,255,255,.1);
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+  }
+  .footer-bottom p { color: rgba(255,255,255,.45); font-size: .85rem; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .ceo-inner, .about-inner { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .footer-inner { grid-template-columns: 1fr; }
+    nav ul { display: none; }
+    .hamburger { display: block; }
+    nav.open ul {
+      display: flex; flex-direction: column;
+      position: absolute; top: 72px; left: 0; right: 0;
+      background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,.1);
+      padding: 20px;
+    }
+    .hero-stats { gap: 22px; }
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-up {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="inner">
+    <div>
+      <span><i class="fas fa-envelope"></i><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a4cdcac2cbe4d7d0d6cdd2c1c6d4cb8ac7cbc9">[email&#160;protected]</a></span>
+    </div>
+    <div>
+      <a href="tel:+18552214304"><i class="fas fa-phone"></i>(855) 221 4304</a>
+      <a href="#contact"><i class="fas fa-map-marker-alt"></i>DeFuniak Springs, FL, US</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="navbar">
+    <div class="logo">
+      <svg width="200" height="56" viewBox="0 0 500 140" xmlns="http://www.w3.org/2000/svg">
+        <!-- Circle background -->
+        <circle cx="63" cy="70" r="58" fill="#1a1f6e"/>
+        <!-- S curve -->
+        <path d="M45 46 C45 34, 84 30, 84 50 C84 63, 42 63, 42 78 C42 94, 82 90, 82 104" fill="none" stroke="white" stroke-width="10" stroke-linecap="round"/>
+        <!-- Up arrow -->
+        <line x1="63" y1="88" x2="63" y2="38" stroke="white" stroke-width="5" stroke-linecap="round"/>
+        <polyline points="51,50 63,36 75,50" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Down arrow -->
+        <line x1="63" y1="58" x2="63" y2="108" stroke="white" stroke-width="5" stroke-linecap="round"/>
+        <polyline points="51,96 63,110 75,96" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Strive text as one element with tspan for colors -->
+        <text x="134" y="96" font-family="Montserrat, Arial Black, sans-serif" font-weight="900" font-size="66"><tspan fill="#1a1f6e">Stri</tspan><tspan fill="#29a8e0">ve</tspan></text>
+        <!-- BPO subtext aligned under ve -->
+        <text x="368" y="118" font-family="Montserrat, Arial Black, sans-serif" font-weight="800" font-size="22" fill="#1a1f6e">BPO</text>
+      </svg>
+    </div>
+    <nav id="main-nav">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="btn-apply">Apply Now</a>
+    <button class="hamburger" onclick="document.getElementById('main-nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="hero-inner fade-up">
+    <div class="hero-badge">Full Scale BPO Solutions</div>
+    <h1>From High Quality <span>Leads to Sales</span></h1>
+    <p>By combining cutting-edge technology, skilled agents, and data-driven insights, we ensure a seamless transition from lead acquisition to closing deals, maximizing your revenue potential.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Get a Quote</a>
+      <a href="#about" class="btn-outline">Learn More</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-number">500+</div><div class="stat-label">BPO Experts</div></div>
+      <div class="stat"><div class="stat-number">10+</div><div class="stat-label">Years Experience</div></div>
+      <div class="stat"><div class="stat-number">15+</div><div class="stat-label">Countries Served</div></div>
+      <div class="stat"><div class="stat-number">40%</div><div class="stat-label">Avg. Conversion Rate</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CEO MESSAGE -->
+<section class="ceo-section">
+  <div class="ceo-inner section-inner fade-up">
+    <div class="ceo-content">
+      <div class="section-label">Message From The CEO</div>
+      <h2 class="section-title">Leadership Committed to <span>Your Success</span></h2>
+      <p>At Strive BPO LLP, our mission has always been clear — to empower businesses through world-class customer engagement and process optimization. For over a decade, we've built the largest network of virtual and live agents, driven by cutting-edge technology and an unwavering commitment to excellence.</p>
+      <p>In a world that moves fast and expects faster service, we pride ourselves on being more than just a service provider. We are a strategic partner. Whether you're scaling operations or optimizing support channels, our onshore and offshore teams are designed to seamlessly integrate with your vision and values.</p>
+      <p>Our strength lies in people — the talented professionals behind every call, every interaction, and every solution.</p>
+      <a href="#about" class="btn-primary" style="margin-top:10px; display:inline-block;">Learn More About Us</a>
+    </div>
+    <div>
+      <div class="ceo-card">
+        <div class="ceo-avatar"><i class="fas fa-user-tie"></i></div>
+        <div class="ceo-name">Managing Director</div>
+        <div class="ceo-title">~ Co-Founder & CEO, Strive BPO LLP</div>
+        <div class="ceo-quote">
+          "We are more than a service provider — we are a strategic partner committed to your growth and success."
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner section-inner fade-up">
+    <div class="about-img-box">
+      <div class="pattern"></div>
+      <div class="about-img-number">10+</div>
+      <div class="about-center-text">
+        <div class="big">500+</div>
+        <div class="sub">Professional BPO Experts</div>
+        <div class="about-badges">
+          <div class="about-badge">Onshore</div>
+          <div class="about-badge">Offshore</div>
+          <div class="about-badge">24/7</div>
+          <div class="about-badge">Multilingual</div>
+        </div>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="section-label">About Company</div>
+      <h2 class="section-title">Your Partner for Business Process <span>Outsourcing</span></h2>
+      <p>Strive BPO LLP is the biggest network of virtual & live agents, using state of the art technology. For more than 10 years now Strive BPO LLP has led the way with dedicated Call Center and Business Process Outsourcing.</p>
+      <h3><i class="fas fa-users" style="color:var(--sky); margin-right:8px;"></i>Experience</h3>
+      <p>Our great team of more than 500+ BPO experts brings deep domain knowledge across multiple industries and business functions.</p>
+      <h3><i class="fas fa-headset" style="color:var(--sky); margin-right:8px;"></i>Quick Support</h3>
+      <p>We'll help you test bold new ideas with Quality Services. Our highly professional onshore and offshore solutions allow you to focus on making your enterprise a success.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="section-inner fade-up">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title" style="color:#fff;">Design the Concept of Your <span>Business Process</span> Now</h2>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-icon"><i class="fas fa-mouse-pointer"></i></div>
+        <h4>Clicks</h4>
+        <p>Our optimized campaigns help you get the most traffic from top organic and paid sources.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-icon"><i class="fas fa-filter"></i></div>
+        <h4>Leads</h4>
+        <p>Our Lead Generation helps you generate leads in real-time with more conversion rate and quality.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-icon"><i class="fas fa-chart-line"></i></div>
+        <h4>Conversions</h4>
+        <p>We have a proven track record in generating more than a 40% conversion rate with Quality Services.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-icon"><i class="fas fa-dollar-sign"></i></div>
+        <h4>Sales</h4>
+        <p>Our services enable you to measure your sales performance in real-time and gives you higher sales.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-icon"><i class="fas fa-expand-arrows-alt"></i></div>
+        <h4>Scalable Solutions</h4>
+        <p>Our services are fully scalable — we can grow with your business from startup to large enterprise.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-icon"><i class="fas fa-handshake"></i></div>
+        <h4>Client-Centric</h4>
+        <p>We prioritize our clients' needs above all else, delivering tailored solutions that drive success.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="section-inner fade-up">
+    <div class="section-label">Our Services</div>
+    <h2 class="section-title">We Offer a Wide Variety of <span>IT/BPO Services</span></h2>
+    <p class="section-desc">From lead generation to digital marketing — our comprehensive suite of services is designed to take your business to the next level.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-bullseye"></i></div>
+        <h4>Lead Generation</h4>
+        <p>We carry skillset in generating leads in multiple insurance industries and businesses with precision targeting.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-robot"></i></div>
+        <h4>Virtual Assistants</h4>
+        <p>Turn to our experts to perform comprehensive, multi-stage auditing of your lead management processes.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-random"></i></div>
+        <h4>Live Transfers</h4>
+        <p>Our staff maintains business integrity with their Live Transfers, quality support and communication.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-briefcase"></i></div>
+        <h4>Professional Services</h4>
+        <p>Trust our top minds to eliminate workflow pain points, implement new tech, and consolidate lead solutions.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-hashtag"></i></div>
+        <h4>Digital Marketing</h4>
+        <p>Services that maintain Grade A quality for Digital Marketing and Search Engine Optimization.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-phone-volume"></i></div>
+        <h4>Inbound Solutions</h4>
+        <p>Our customers succeed by taking top quality web traffic and inbound call solutions for their business.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-code"></i></div>
+        <h4>Website Development</h4>
+        <p>Elevate your brand and engage your audience with our professional website development solutions.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+        <h4>Software Development</h4>
+        <p>Maximize efficiency and stay ahead of the competition with our tailored software development expertise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="industries-section">
+  <div class="section-inner fade-up">
+    <div class="section-label">Technology Index</div>
+    <h2 class="section-title">We Deliver Solutions Within Multiple <span>Industries</span></h2>
+    <div class="industry-tabs">
+      <button class="industry-tab active">Auto Insurance</button>
+      <button class="industry-tab">Health Insurance</button>
+      <button class="industry-tab">Medicare Supplements</button>
+      <button class="industry-tab">Solar Panel Solution</button>
+      <button class="industry-tab">Home Security</button>
+      <button class="industry-tab">Mortgage & Finance</button>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section">
+  <div class="section-inner fade-up">
+    <div class="section-label">Why Choose Us</div>
+    <h2 class="section-title" style="color:#fff;">What Makes Us <span>Unique</span></h2>
+    <p class="section-desc">We are 500+ professional Cold Callers, Lead Specialists and Lead Managers with more than 10 years of experience in delivering superior results.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <h4>Experience</h4>
+        <p>Over a decade of industry leadership in BPO, with a proven track record of exceptional results.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <h4>Global Reach</h4>
+        <p>Onshore & offshore solutions for maximum flexibility — serving clients in 15+ countries worldwide.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <h4>Technology-Driven</h4>
+        <p>State-of-the-art technology for superior results, keeping you ahead of the competition always.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">04</div>
+        <h4>Tailored Services</h4>
+        <p>Customized solutions to meet your specific business needs — from startups to large enterprises.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="section-inner fade-up">
+    <div class="section-label" style="text-align:center;">Our Clients</div>
+    <h2 class="section-title" style="text-align:center;">We are Trusted in <span>15+ Countries</span> Worldwide</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Strive BPO LLP transformed our lead generation process. We saw a 35% increase in sales!"</blockquote>
+        <div class="testimonial-author">
+          <div class="t-avatar">ED</div>
+          <div><div class="t-name">Eric D.</div><div class="t-role">CEO</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Their virtual assistants are professional and efficient. Our team loves working with them."</blockquote>
+        <div class="testimonial-author">
+          <div class="t-avatar">SM</div>
+          <div><div class="t-name">Sarah M.</div><div class="t-role">Director</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Excellent digital marketing results. They've taken our online presence to the next level!"</blockquote>
+        <div class="testimonial-author">
+          <div class="t-avatar">DP</div>
+          <div><div class="t-name">David P.</div><div class="t-role">Entrepreneur</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Outstanding inbound call center services — customer satisfaction has skyrocketed!"</blockquote>
+        <div class="testimonial-author">
+          <div class="t-avatar">TG</div>
+          <div><div class="t-name">Tom G.</div><div class="t-role">Marketing Manager</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-inner fade-up">
+    <div class="section-label" style="text-align:center;">FAQs</div>
+    <h2 class="section-title" style="text-align:center;">Frequently Asked <span>Questions</span></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">What services does Strive BPO LLP offer? <i class="fas fa-plus"></i></button>
+        <div class="faq-answer">Strive BPO LLP specializes in Call Center Services, Customer Support, Technical Support, Telemarketing, Lead Generation, Back Office Processing, and Business Process Outsourcing (BPO) solutions — both onshore and offshore.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">How is Strive BPO LLP different from other BPO companies? <i class="fas fa-plus"></i></button>
+        <div class="faq-answer">We combine over a decade of industry experience with state-of-the-art technology and a large network of highly trained virtual and live agents. Our approach is tailored, scalable, and focused on delivering measurable results for every client.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Can I outsource only specific business processes? <i class="fas fa-plus"></i></button>
+        <div class="faq-answer">Absolutely. Whether you need support for a single function like customer service or want end-to-end process outsourcing, we offer flexible, customized solutions that align with your business needs.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Where are your agents located? <i class="fas fa-plus"></i></button>
+        <div class="faq-answer">We operate a global network of both onshore and offshore agents, allowing us to offer 24/7 multilingual support with cost-effective coverage and local expertise.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">What industries do you serve? <i class="fas fa-plus"></i></button>
+        <div class="faq-answer">Strive BPO LLP works with clients across various industries including eCommerce, Healthcare, Real Estate, Telecom, Travel, Finance, Technology, and more.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Is my business data safe with Strive BPO LLP? <i class="fas fa-plus"></i></button>
+        <div class="faq-answer">Yes. We take data security very seriously and follow strict compliance protocols, including NDA agreements, GDPR regulations, and robust cybersecurity systems to protect your data and customer information.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">How do I get started with Strive BPO LLP? <i class="fas fa-plus"></i></button>
+        <div class="faq-answer">Simply contact us via our website or email. Our business development team will set up a consultation to understand your requirements and propose a customized solution tailored to your business goals.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip" id="contact">
+  <h2>We Carry More Than Just Good Customer Service</h2>
+  <p>Let's Consult our Experts for your BPO Services</p>
+  <a href="/cdn-cgi/l/email-protection#4d24232b220d3e393f243b282f3d22632e2220" class="btn-white">Contact Us Today</a>
+</div>
+
+<!-- BLOG -->
+<section class="blog-section" id="blog">
+  <div class="section-inner fade-up">
+    <div class="section-label">Recent News</div>
+    <h2 class="section-title">Recent News <span>& Articles</span></h2>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-img a"><i class="fas fa-robot" style="color:var(--sky)"></i></div>
+        <div class="blog-body">
+          <div class="blog-cat">Virtual Assistants</div>
+          <h4>How Virtual Assistants Can Boost Productivity</h4>
+          <p>Discover how professional virtual assistant services can transform your team's efficiency and output.</p>
+          <a href="#" class="blog-link">Learn More →</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-img b"><i class="fas fa-phone" style="color:var(--navy)"></i></div>
+        <div class="blog-body">
+          <div class="blog-cat">Inbound Solutions</div>
+          <h4>Inbound Call Center Best Practices</h4>
+          <p>Learn the best practices that leading BPO companies use to deliver exceptional inbound call experiences.</p>
+          <a href="#" class="blog-link">Learn More →</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-img c"><i class="fas fa-chart-bar" style="color:var(--sky)"></i></div>
+        <div class="blog-body">
+          <div class="blog-cat">BPO</div>
+          <h4>The Future of Business Process Outsourcing</h4>
+          <p>An in-depth look at how AI and automation are reshaping the BPO landscape for years to come.</p>
+          <a href="#" class="blog-link">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo-text">
+        <span class="d">Strive</span><span class="l">BPO</span> <span class="d" style="font-size:.85rem; font-weight:700;">LLP</span>
+      </div>
+      <p class="footer-about">Strive BPO LLP is at the forefront of Business Process Outsourcing, delivering high-quality onshore and offshore solutions.</p>
+      <div class="social-links">
+        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#blog">Our Blog</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#">Lead Generation</a></li>
+        <li><a href="#">Live Transfers</a></li>
+        <li><a href="#">Inbound Solutions</a></li>
+        <li><a href="#">Virtual Assistants</a></li>
+        <li><a href="#">Digital Marketing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Reach Us</h5>
+      <div class="footer-contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>1031 US 90 Ste 3, DeFuniak Springs, FL, US</span>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fas fa-envelope"></i>
+        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="731a1d151c330007011a051611031c5d101c1e">[email&#160;protected]</a></span>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fas fa-phone"></i>
+        <span>(855) 221 4304</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Copyright © 2025 Strive BPO LLP | All rights reserved</p>
+    <p style="color:rgba(255,255,255,.3)">Powered by Strive BPO LLP</p>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // FAQ toggle
+  function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const allAnswers = document.querySelectorAll('.faq-answer');
+    const allBtns = document.querySelectorAll('.faq-question');
+    allAnswers.forEach(a => a.classList.remove('open'));
+    allBtns.forEach(b => b.classList.remove('open'));
+    if (!answer.classList.contains('open')) {
+      answer.classList.add('open');
+      btn.classList.add('open');
+    }
+  }
+
+  // Industry tabs
+  document.querySelectorAll('.industry-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.industry-tab').for
